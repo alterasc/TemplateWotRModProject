@@ -1,0 +1,14 @@
+﻿{
+  "AssemblyName": "TemplateWotRModProject.dll",
+  "Author": "TemplateWotRModAuthor",
+  "DisplayName": "TemplateWotRModProject",
+  "EntryMethod": "TemplateWotRModProject.Main.Load",
+  "GameVersion": "1.4.0",
+  "HomePage": "",
+  "Id": "TemplateWotRModProject",
+  "ManagerVersion": "0.23.0",
+  "Repository": "",
+  "Requirements": [],
+  "LoadAfter": [],
+  "Version": "1.0.0"
+}

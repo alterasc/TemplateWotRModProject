@@ -8,12 +8,13 @@ Includes
 ## Setup 
 
 0. Install UMM if you don't have it.
-1. Set `WrathPath` environemnt variable to point 
-2. Rename stuff
-    Do full text replacement
+1. Set `WrathPath` environment variable to point at game folder
+2. Rename stuff    
+    Do full text replacement (for example using Visual Studio Code or Visual Studio)
     - `TemplateWotRModProject` -> `Your project name`
-    - `TemplateWotRModAuthor` -> `Your name`
-    Rename TemplateWotRModProject.csproj and TemplateWotRModProject.sln
+    - `TemplateWotRModAuthor` -> `Your name`    
+    
+    Rename `TemplateWotRModProject.csproj` and `TemplateWotRModProject.sln` to match your mod name.
 3. Open in Visual Studio.
 4. Click on Solution -> Restore Nuget packages
 5. Do Build -> Clean Solution.

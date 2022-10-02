@@ -1,4 +1,4 @@
-﻿# Template project for modding Pathfinder: Wrath of the Righteous
+# Template project for modding Pathfinder: Wrath of the Righteous
 
 Includes 
 - Publicize task

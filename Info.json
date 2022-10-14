@@ -3,12 +3,12 @@
   "Author": "TemplateWotRModAuthor",
   "DisplayName": "TemplateWotRModProject",
   "EntryMethod": "TemplateWotRModProject.Main.Load",
-  "GameVersion": "1.4.0",
+  "GameVersion": "2.0.0",
   "HomePage": "",
   "Id": "TemplateWotRModProject",
   "ManagerVersion": "0.23.0",
   "Repository": "",
-  "Requirements": [],
-  "LoadAfter": [],
+  "Requirements": [ "ModMenu-1.2.5" ],
+  "LoadAfter": [ "MewsiferConsole.Mod" ],
   "Version": "1.0.0"
 }

@@ -149,9 +149,14 @@
       <HintPath>$(WrathPath)\Wrath_Data\Managed\UnityModManager\UnityModManager.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="ModMenu">
+      <HintPath>$(WrathPath)\Mods\ModMenu\ModMenu.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
+    <Compile Include="SettingsModMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

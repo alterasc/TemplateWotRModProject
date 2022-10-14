@@ -1,11 +1,6 @@
 ﻿using HarmonyLib;
-using Kingmaker;
-using Newtonsoft.Json;
-using System;
-using System.Globalization;
-using System.IO;
-using System.Text;
-using UnityEngine;
+using Kingmaker.Blueprints.JsonSystem;
+using TemplateWotRModProject.Base;
 using UnityModManagerNet;
 
 namespace TemplateWotRModProject
@@ -17,13 +12,13 @@ namespace TemplateWotRModProject
     {
         public static bool Enabled;
         public static UnityModManager.ModEntry ModEntry;
+        public static SettingsModMenu Settings;
         static bool Load(UnityModManager.ModEntry modEntry)
-        {            
+        {
+            Settings = new SettingsModMenu();
             var harmony = new Harmony(modEntry.Info.Id);
             ModEntry = modEntry;
             modEntry.OnToggle = OnToggle;
-            modEntry.OnGUI = OnGUI;
-            modEntry.OnSaveGUI = OnSaveGUI;
 #if DEBUG
             modEntry.OnUnload = OnUnload;
 #endif
@@ -40,16 +35,22 @@ namespace TemplateWotRModProject
         {
             return true;
         }
+    }
 
-
-        static void OnGUI(UnityModManager.ModEntry modEntry)
+    internal class SettingsStarter
+    {
+        [HarmonyPatch(typeof(BlueprintsCache), nameof(BlueprintsCache.Init))]
+        internal static class BlueprintsCache_Init_Patch
         {
+            private static bool _initialized;
 
-        }
-
-        static void OnSaveGUI(UnityModManager.ModEntry modEntry)
-        {
-
+            [HarmonyPostfix]
+            static void Postfix()
+            {
+                if (_initialized) return;
+                _initialized = true;
+                Main.Settings.Initialize();
+            }
         }
     }
 }

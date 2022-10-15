@@ -1,7 +1,7 @@
 ﻿using Kingmaker.Localization;
 using ModMenu.Settings;
 
-namespace TemplateWotRModProject.Base
+namespace TemplateWotRModProject
 {
     internal class SettingsModMenu
     {

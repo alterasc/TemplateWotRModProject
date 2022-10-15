@@ -1,6 +1,5 @@
 ﻿using HarmonyLib;
 using Kingmaker.Blueprints.JsonSystem;
-using TemplateWotRModProject.Base;
 using UnityModManagerNet;
 
 namespace TemplateWotRModProject

@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="packages\Aze.Publicise.MSBuild.Task.1.1.0\build\Aze.Publicise.MSBuild.Task.props" Condition="Exists('packages\Aze.Publicise.MSBuild.Task.1.1.0\build\Aze.Publicise.MSBuild.Task.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C03B79A7-F087-44A4-92E1-DD3EDFCA487B}</ProjectGuid>
+    <ProjectGuid>{D972AB2C-6BA0-4998-A662-FF767B90CB1F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TemplateWotRModProject</RootNamespace>
@@ -154,22 +153,18 @@
     <Compile Include="Main.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".gitignore" />
     <None Include="Info.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="LICENSE" />
-    <None Include="packages.config" />
-    <None Include="README.md" />
-    <None Include="Repository.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Aze.Publicise.MSBuild.Task">
+      <Version>1.1.0</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" AfterTargets="BeforeClean">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('packages\Aze.Publicise.MSBuild.Task.1.1.0\build\Aze.Publicise.MSBuild.Task.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Aze.Publicise.MSBuild.Task.1.1.0\build\Aze.Publicise.MSBuild.Task.props'))" />
-  </Target>
   <PropertyGroup>
     <PostBuildEvent>if $(ConfigurationName) == Release (powershell.exe -Command $null=mkdir '$(SolutionDir)PublishOutput'; Compress-Archive -CompressionLevel Optimal -Path '$(TargetDir)*' -DestinationPath '$(SolutionDir)PublishOutput\$(ProjectName).zip' -Force)
 

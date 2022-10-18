@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+//Copyright (c) 2021 Sean Petrie (Vek17)
+
 namespace TemplateWotRModProject
 {
     public static class Utils

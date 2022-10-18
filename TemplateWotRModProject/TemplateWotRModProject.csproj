@@ -156,6 +156,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="SettingsModMenu.cs" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.json">

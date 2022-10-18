@@ -16,22 +16,12 @@ namespace TemplateWotRModProject
 
         private static LocalizedString CreateString(string partialKey, string text)
         {
-            return CreateStringInner(GetKey(partialKey, "--"), text);
+            return Utils.CreateLocalizedString(GetKey(partialKey, "--"), text);
         }
 
         private static string GetKey(string partialKey, string separator = ".")
         {
             return $"{RootKey}{separator}{partialKey}";
-        }
-
-        private static LocalizedString CreateStringInner(string key, string value)
-        {
-            LocalizedString result = new()
-            {
-                m_Key = key
-            };
-            LocalizationManager.CurrentPack.PutString(key, value);
-            return result;
         }
     }
 }
